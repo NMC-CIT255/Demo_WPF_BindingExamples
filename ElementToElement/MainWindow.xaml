@@ -6,9 +6,23 @@
         xmlns:local="clr-namespace:ElementToElement"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <StackPanel>
-        <TextBlock Text="{Binding Name}" />
-        <TextBlock Text="{Binding Age}" />
-        <Button Content="Change" Click="Button_Click" />
-    </StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="John E Velis"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="{Binding Path=Value, ElementName=_slider}"/>
+        <Slider x:Name="_slider"
+                Grid.Row="1"
+                Minimum="10"
+                Maximum="80"
+                Value="30" />
+        <TextBox Text="{Binding Path=Value, ElementName=_slider}"
+                 Grid.Row="2"
+                 FontSize="20" />
+    </Grid>
 </Window>

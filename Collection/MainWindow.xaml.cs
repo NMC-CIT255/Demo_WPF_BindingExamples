@@ -13,16 +13,27 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ElementToElement
+namespace Collection
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Person> _people;
+
         public MainWindow()
         {
             InitializeComponent();
+            _people = new List<Person>()
+            {
+                new Person{ Name = "Bart", Age = 10 },
+                new Person{ Name = "Homer", Age = 45 },
+                new Person{ Name = "Marge", Age = 35 },
+                new Person{ Name = "Lisa", Age = 12 },
+                new Person{ Name = "Maggie", Age = 1 }
+            };
+            _list.ItemsSource = _people;
         }
     }
 }

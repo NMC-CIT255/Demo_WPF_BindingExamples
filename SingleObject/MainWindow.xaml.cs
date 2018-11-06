@@ -20,9 +20,18 @@ namespace ElementToElement
     /// </summary>
     public partial class MainWindow : Window
     {
+        Person _person;
+
         public MainWindow()
         {
             InitializeComponent();
+            _person = new Person() { Name = "John", Age = 60 };
+            DataContext = _person;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            _person.Age++;
         }
     }
 }
